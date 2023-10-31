@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap');
+:root {
+  
+}
+main ::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: #0a0a0b;
+}
+main {
+  font-family: "Sans-serif";
+
+  display: grid;
+  
+/*   height: 1800px;/*is this the right choice?*/ */
+  width: 95%;
+  margin: 0% auto;
+  border-style: solid;
+  border-radius: 3rem;
+  background: #1c1c1e;
+  
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "TITLE TITLE TITLE TITLE TITLE"
+    "JUMPER JUMPER JUMtext JUMtext JUMtext"
+    "JUMPER JUMPER JUMprice JACKET JACKET"
+    "JACtext JACtext AD JACKET JACKET"
+    "JACtext JACtext JACprice ELSE ELSE"
+    "TROUSERS TROUSERS TROtext ELSE ELSE"
+    "TROUSERS TROUSERS TROtext TROprice foot";
+  grid-gap: 0.5%;
+  padding: 0%;
+}
+main:before{
+  content:"© 2021 Kabir";
+  height: 20px;
+  width: 100px;
+  background-color: #f74345;
+  position: fixed;
+  left: -40px;
+  top: 40px;
+  transform: rotate(270deg);
+}
+/*Starting */
+div {
+  background: #2c2c2e;
+  
+  border-radius: 2rem;
+  margin: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+/*price animation group*/
+.prices {
+  background: linear-gradient(290deg,#ff2b54, #ff5433);
+  color: white;
+  font-size: 2rem;
+  font-weight: 800;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.prices p {
+  position: relative;
+  transition: 0.5s;
+}
+.prices p:after{
+  content:"\00bb";
+  transition: 0.5s;
+  position: absolute;
+  right: -30px;
+  opacity: 0;
+}
+.prices:hover p{
+  padding-right: 30px;/*how magical! it slows the move*/
+}
+.prices:hover p:after{
+  right: 0px;
+  opacity: 1;
+}
+.texts {
+  padding: 1rem;
+  color: #f74345;
+  background: #2c2c2e;
+}
+h2 {
+  color: #fafafa;
+}
+img{
+  width: 100%;
+  height: auto;
+  border-radius: 2rem;
+}
+/*now comes all the divs stuff*/
+/*title*/
+#titlewords{
+  font-size: 3rem;
+  color: white;
+}
+
+#titlewords2 {
+  /*color: #f74345;*/
+  font-size: 2rem;
+  color: white;
+}
+#TITLE {
+  grid-area: TITLE;
+  line-height: 0.9;
+  padding-left: 30px;
+  background: linear-gradient(#ff2b54, #ff5433); 
+}
+
+span:hover{
+  background: black;
+  border-radius: 1rem;
+}
+
+/*jumper part*/
+#JUMPER {
+  grid-area: JUMPER;
+}
+#jumperimg {
+  width: 100%;
+  border-radius: 2rem;
+}
+
+#JUMprice {
+  grid-area: JUMprice;
+}
+
+#JUMtext {
+  grid-area: JUMtext;
+  padding-left: 30px;
+}
+
+
+/*jacket part*/
+#JACKET {
+  grid-area: JACKET;
+}
+#JACtext {
+  grid-area: JACtext;
+}
+#JACprice {
+  grid-area: JACprice;
+}
+
+
+/*trousers part*/
+#TROUSERS {
+  grid-area: TROUSERS;
+}
+#TROtext {
+  grid-area: TROtext;
+}
+#TROprice {
+  grid-area: TROprice;
+}
+
+/*random part*/
+#ELSE {
+  grid-area: ELSE;
+  background: linear-gradient(#ff2b54, #ff5433);
+  color: white;
+  font-family: "Yuji Boku", "Comfortaa", serif;
+}
+#ELSEtitle {
+  font-family: "Sans-serif";
+}
+
+
+/*AD parts*/
+#AD {
+  grid-area: AD;
+  font-family: "Comfortaa";
+  font-size: 2rem;
+  color: #f74345;
+  padding: 20px;
+}
+#adtext {
+  font-size: 1rem;
+  color: #f74345;
+}
+#sp {
+  color: #f74345;
+}
+/*foot*/
+#foot {
+  grid-area: foot;
+  text-align: center;
+  color: white;
+  border-style: solid;
+  border-color: #f74345;
+}
+#contactimg {
+  width: 50px;
+  height: 50px;
+  border-radius: 1rem;
+}
+#contactimg:hover{
+  transform: scale(1.5);
+}
+.names {
+  color: #f74345;
+  font-family: "Comfortaa", serif;
+}
+
+/*Finishing*/
+/* @media (max-width: 1400px) {
+  .iCanHide {
+    display: none;
+  }
+ */
+@media (max-width: 800px) {
+  main {
+    display: grid;
+    width: 100%;
+
+    height: 6000px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(15,1fr);
+    grid-template-areas:
+      "TITLE TITLE "
+      "JUMPER JUMPER "
+      "JUMPER JUMPER"
+      "JUMtext JUMtext"
+      "JUMprice AD"
+      "JACKET JACKET"
+      "JACKET JACKET"
+      "JACtext JACtext"
+      "JACprice foot"
+      "TROUSERS TROUSERS"
+      "TROUSERS TROUSERS"
+      "TROtext TROtext"
+      "TROprice empty"
+      "ELSE ELSE"
+      "ELSE ELSE";
+    grid-gap: 0%;
+    margin: 0%;
+    padding: 0%;
+  }
+  
+  
+}
+
+@media (max-width: 500px) {
+  main {
+    display: grid;
+    width: 100%;
+
+    height: 6500px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(15,1fr);
+    grid-template-areas:
+      "TITLE "
+      "JUMPER "
+      "JUMtext"
+      "JUMprice"
+      "JACKET"
+      "JACtext"
+      "JACprice"
+      "TROUSERS"
+      "TROtext"
+      "TROprice"
+      "ELSE"
+      "ELSE"
+      "ELSE"
+      "AD"
+      "foot";
+    grid-gap: 0%;
+    margin: 0%;
+    padding: 0%;
+  }
